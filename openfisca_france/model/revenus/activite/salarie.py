@@ -1071,7 +1071,7 @@ class cout_du_travail(Variable):
 class cout_differe(Variable):
     value_type = float
     entity = Individu
-    label = "Charges, aides et crédits différées ou particulières"
+    label = "Charges, aides et crédits différés ou particuliers"
     definition_period = MONTH
 
     def formula(individu, period, parameters):
