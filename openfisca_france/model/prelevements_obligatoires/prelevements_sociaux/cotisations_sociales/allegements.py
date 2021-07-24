@@ -138,7 +138,7 @@ class credit_impot_competitivite_emploi(Variable):
 class aide_premier_salarie(Variable):
     value_type = float
     entity = Individu
-    label = "Aide à l'embauche d'un premier salarié"
+    label = "Aide à l'embauche du premier salarié"
     definition_period = MONTH
     calculate_output = calculate_output_add
 
