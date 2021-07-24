@@ -380,7 +380,7 @@ def compute_allegement_fillon(individu, period, parameters):
 
 class allegement_cotisation_allocations_familiales(Variable):
     value_type = float
-    label = "Allègement de la cotisation d'allocations familiales sur les bas et moyens salaires"
+    label = "Réduction du taux de la cotisation d’allocations familiales (bas et moyens salaires)"
     entity = Individu
     reference = "https://www.urssaf.fr/portail/home/employeur/calculer-les-cotisations/les-taux-de-cotisations/la-cotisation-dallocations-famil/la-reduction-du-taux-de-la-cotis.html"
     definition_period = MONTH
