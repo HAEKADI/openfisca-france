@@ -1027,7 +1027,7 @@ class salaire_super_brut(Variable):
 class exonerations_et_allegements(Variable):
     value_type = float
     entity = Individu
-    label = "Charges, aides et crédits différées ou particulières"
+    label = "Exonérations et allègements"
     definition_period = MONTH
 
     def formula(individu, period, parameters):
