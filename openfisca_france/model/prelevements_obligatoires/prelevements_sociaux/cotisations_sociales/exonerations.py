@@ -290,7 +290,7 @@ class exoneration_cotisations_employeur_zrd(Variable):
 class exoneration_cotisations_employeur_zrr(Variable):
     value_type = float
     entity = Individu
-    label = "Exonrérations de cotisations employeur pour l'embauche en zone de revitalisation rurale (ZRR)"
+    label = "Exonération de cot. employeur en ZRR (zone de revitalisation rurale)"
     reference = "http://www.apce.com/pid538/embauches-en-zru-et-zrr.html?espace=1&tp=1"
     definition_period = MONTH
 
