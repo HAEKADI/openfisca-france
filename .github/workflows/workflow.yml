@@ -57,4 +57,4 @@ jobs:
           CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
           CI_NODE_INDEX: ${{ matrix.ci_node_index }}
         continue-on-error: true
-        run: ../split-test.sh
+        run: "${GITHUB_WORKSPACE}/.github/split-tests.sh"
