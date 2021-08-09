@@ -56,4 +56,4 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}
-      - run: echo ${{matrix.dir}}
+      - run: openfisca test --country-package openfisca_france ${{matrix.dir}}
