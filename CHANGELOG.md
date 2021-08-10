@@ -1,5 +1,14 @@
 # Changelog
 
+### 69.0.2 [#]()
+
+* Changement mineur.
+* Périodes concernées : 1995 - 2001
+* Zones impactées :
+  * `parameters/marche_travail/salaire_minimum/smic_h_b.yaml`
+* Détails :
+  - Ajoute quelques années au SMIC horaire brut
+
 ### 69.0.1 [#1638](https://github.com/openfisca/openfisca-france/pull/1638)
 
 * Changement mineur.
