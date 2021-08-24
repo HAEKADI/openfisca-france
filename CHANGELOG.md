@@ -1,6 +1,6 @@
 # Changelog
 
-## 72.0.1 [#1650](https://github.com/openfisca/openfisca-france/pull/1650)
+### 72.0.1 [#1650](https://github.com/openfisca/openfisca-france/pull/1650)
 
 * Amélioration technique.
 * Zones impactées : `.circleci/config.yml.
@@ -10,7 +10,7 @@
   - Regroupe les deux jobs `lint_python_files` et `lint_yaml_files` dans un seul job.
   - Rend le job `check-version-and-changelog` dépendant de tous les autres jobs.
 
-## 72.0.0 [#1656](https://github.com/openfisca/openfisca-france/pull/1656)
+# 72.0.0 [#1656](https://github.com/openfisca/openfisca-france/pull/1656)
 
 * Évolution du système socio-fiscal. | Amélioration technique.
 * Périodes concernées : toutes.
