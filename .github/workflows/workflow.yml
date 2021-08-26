@@ -145,4 +145,4 @@ jobs:
           echo "This branch"
           echo ${GITHUB_REF#refs/heads/}
           echo "branch"
-          "${GITHUB_WORKSPACE}/is-version-number-acceptable.sh"
+          "${GITHUB_WORKSPACE}/.github/is-version-number-acceptable.sh"
