@@ -181,11 +181,10 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-build-${{ hashFiles('setup.py') }}
-      - name: PYPI
+      - name: Upload a Python package to PyPi
         env:
           PYPI_USERNAME: openfisca-bot
           PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }} # PYPI_PASSWORD: this value should be set in GitHub secrets!
-      - name: Upload a Python package to PyPi
         run: twine upload dist/* --username $PYPI_USERNAME --password $PYPI_PASSWORD
       - name: Publish a git tag
         run: "${GITHUB_WORKSPACE}/.github/publish-git-tag.sh"
