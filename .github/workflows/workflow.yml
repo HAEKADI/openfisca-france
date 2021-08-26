@@ -168,7 +168,7 @@ jobs:
     needs: [check-for-functional-changes]
     # if: needs.check-for-functional-changes.outputs.status == 'success'
     steps:
-      - run: echo ${{ needs.check-for-functional-changes.outputs.status }}
+      - run: echo ${{ github.event.check-for-functional-changes.outputs.status }}
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # to fetch all the tags
