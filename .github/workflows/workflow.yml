@@ -150,7 +150,7 @@ jobs:
     if: github.ref == 'refs/heads/github-actions'
     # needs: check_version_and_changelog
     outputs:
-      status: ${{ steps.early.status }}
+      status: ${{ steps.early.outputs.status }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -168,7 +168,7 @@ jobs:
     needs: [check-for-functional-changes]
     # if: needs.check-for-functional-changes.outputs.status == 'success'
     steps:
-      - run: echo ${{ github.event.check-for-functional-changes.outputs.status }}
+      - run: echo ${{ needs.check-for-functional-changes.outputs.status }}
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # to fetch all the tags
