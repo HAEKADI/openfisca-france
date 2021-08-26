@@ -161,6 +161,25 @@ jobs:
           python-version: 3.7
       - id: early
         run: if ! "${GITHUB_WORKSPACE}/.github/has-functional-changes.sh" ; then echo "::set-output name=status::success" ; fi
-      - run: echo *************
       - run: echo ${{ steps.early.outputs.status }}
-      - run: echo *************
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, check-for-functional-changes]
+    if: needs.check-for-functional-changes.outputs.status == 'success'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # to fetch all the tags
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Cache build
+        id: restore-build
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-build-${{ hashFiles('setup.py') }}
