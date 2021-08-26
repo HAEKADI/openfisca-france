@@ -142,5 +142,7 @@ jobs:
       - name: Check version number has been properly updated
         run: |
           git fetch
+          echo "This branch"
           echo ${GITHUB_REF#refs/heads/}
+          echo "branch"
           "${GITHUB_WORKSPACE}/is-version-number-acceptable.sh"
