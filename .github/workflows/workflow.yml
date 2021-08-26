@@ -166,7 +166,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [check-for-functional-changes]
-    # if: needs.check-for-functional-changes.outputs.status == 'success'
+    if: needs.check-for-functional-changes.outputs.status == 'success'
     steps:
       - run: echo ${{ needs.check-for-functional-changes.outputs.status }}
       - uses: actions/checkout@v2
