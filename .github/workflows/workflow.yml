@@ -162,5 +162,5 @@ jobs:
       - id: early
         run: if ! "${GITHUB_WORKSPACE}/.github/has-functional-changes.sh" ; then echo "::set-output name=status::success" ; fi
       - run: echo *************
-      - run: echo ${{ steps.early.status }}
+      - run: echo ${{ steps.early.outputs.status }}
       - run: echo *************
