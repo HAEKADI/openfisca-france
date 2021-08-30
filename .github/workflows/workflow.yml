@@ -95,8 +95,8 @@ jobs:
           key: ${{ env.pythonLocation }}-build-${{ hashFiles('setup.py') }}
       - run: ls -d tests/**/*.py
       - run: |
-        shopt -s globstar
-        openfisca test tests/**/*.py
+          shopt -s globstar
+          openfisca test tests/**/*.py
 
   test-yaml:
     runs-on: ubuntu-latest
