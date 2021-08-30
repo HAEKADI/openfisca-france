@@ -93,7 +93,6 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-build-${{ hashFiles('setup.py') }}
-      - run: shopt -s globstar
       - run: ls -d tests/**/*.py
       - run: openfisca test tests/**/*.py
 
