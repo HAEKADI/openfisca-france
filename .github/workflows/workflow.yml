@@ -93,6 +93,7 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-build-${{ hashFiles('setup.py') }}
+      - run: ls -d tests/**/*.py
       - run: pytest
 
   test-yaml:
