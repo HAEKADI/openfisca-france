@@ -117,7 +117,7 @@ jobs:
         run: |
           echo ${CI_NODE_TOTAL}
           echo ${CI_NODE_INDEX}
-          echo "TEST_FILES_SUBLIST=($(python "${GITHUB_WORKSPACE}/.github/split_tests.py" ${CI_NODE_TOTAL} ${CI_NODE_INDEX}))" >> $GITHUB_ENV
+          echo "TEST_FILES_SUBLIST=$(python "${GITHUB_WORKSPACE}/.github/split_tests.py" ${CI_NODE_TOTAL} ${CI_NODE_INDEX})" >> $GITHUB_ENV
       - name: Run YAML test
         run: |
           echo ${TEST_FILES_SUBLIST}
