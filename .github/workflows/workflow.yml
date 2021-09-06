@@ -116,7 +116,8 @@ jobs:
         run: |
           echo ${CI_NODE_TOTAL}
           echo ${CI_NODE_INDEX}
-          python "${GITHUB_WORKSPACE}/.github/split_tests.py" ${CI_NODE_TOTAL} ${CI_NODE_INDEX}
+          output=($(python "${GITHUB_WORKSPACE}/.github/split_tests.py" ${CI_NODE_TOTAL} ${CI_NODE_INDEX}))
+          echo $output
 
 
   test-api:
