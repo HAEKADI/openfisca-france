@@ -113,11 +113,11 @@ jobs:
         env:
           CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
           CI_NODE_INDEX: ${{ matrix.ci_node_index }}
+          TEST_FILES_SUBLIST: ${{ ($(python "${GITHUB_WORKSPACE}/.github/split_tests.py" ${CI_NODE_TOTAL} ${CI_NODE_INDEX})) }}
         run: |
           echo ${CI_NODE_TOTAL}
           echo ${CI_NODE_INDEX}
-          output=($(python "${GITHUB_WORKSPACE}/.github/split_tests.py" ${CI_NODE_TOTAL} ${CI_NODE_INDEX}))
-          echo $output
+          openfisca test ${TEST_FILES_SUBLIST}
 
 
   test-api:
