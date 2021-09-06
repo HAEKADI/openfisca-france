@@ -108,7 +108,7 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-build-${{ hashFiles('setup.py') }}
-      - name: Yaml tests
+      - name: Split YAML tests
         id: yaml-test
         env:
           CI_NODE_TOTAL: ${{ matrix.ci_node_total }}
@@ -118,8 +118,10 @@ jobs:
           echo ${CI_NODE_TOTAL}
           echo ${CI_NODE_INDEX}
           echo "TEST_FILES_SUBLIST=($(python "${GITHUB_WORKSPACE}/.github/split_tests.py" ${CI_NODE_TOTAL} ${CI_NODE_INDEX}))" >> $GITHUB_ENV
-          echo ${{env.TEST_FILES_SUBLIST}}
-          openfisca test ${{env.TEST_FILES_SUBLIST}}
+      - name: Run YAML test
+        run: |
+          echo ${TEST_FILES_SUBLIST}
+          openfisca test ${TEST_FILES_SUBLIST}
 
 
   test-api:
